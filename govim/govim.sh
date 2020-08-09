@@ -7,6 +7,6 @@ if test -f "$fileName"; then
     echo "$fileName already exists."
     vim $fileName
 else
-    cp $(PWD)/template.go $fileName
+    cp $GOVIM_TPL_PATH/template.go $fileName
     vim $fileName
 fi

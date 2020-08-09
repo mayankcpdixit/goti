@@ -1,3 +1,5 @@
+[ -z "$1" ] && echo -e "Usage:\n govim filename" && exit 1
+
 extRemoved=$(echo ${1//\.go/})
 lCase=$(echo "$extRemoved" | tr '[:upper:]' '[:lower:]' )
 snakeCase=$(echo ${lCase// /_})

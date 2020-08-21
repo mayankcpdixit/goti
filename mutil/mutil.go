@@ -130,6 +130,9 @@ func ArrayToQueue(arr []interface{}) *Queue {
 func (q *Queue) Add(val interface{}) {
 	q.List = append(q.List, val)
 }
+func (q *Queue) Size() int {
+	return len(q.List)
+}
 func (q *Queue) Empty() bool {
 	return len(q.List) == 0
 }
@@ -177,7 +180,7 @@ func ArrayToTree(values []interface{}) *TreeNode {
 		}
 		i++
 
-		if values[i] != nil {
+		if i < len(values) && values[i] != nil {
 			node.Right = &TreeNode{Val: values[i]}
 			q.Add(node.Right)
 		}
